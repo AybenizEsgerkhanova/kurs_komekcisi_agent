@@ -5,8 +5,10 @@ import anthropic
 st.set_page_config(page_title="Kurs Köməkçisi", page_icon="🎓", layout="wide")
 MODEL = "claude-sonnet-5-5"
 MAX_STEPS = 6
+if "ANTHROPIC_API_KEY" not in st.secrets:
+    st.error("Secrets-də ANTHROPIC_API_KEY tapılmadı. Manage app → Settings → Secrets bölməsində əlavə edin.")
+    st.stop()
 client = anthropic.Anthropic(api_key=st.secrets["ANTHROPIC_API_KEY"])
-
 # ---------- 1. Sistem promptu ----------
 SYSTEM = """ROL
 Sən "Kurs Köməkçisi"sən: AI-101 «Süni İntellektə Giriş» kursunun tələbə köməkçisi agentisən. Tələbələrə yalnız bu kursla bağlı suallara kömək edirsən: imtahan tarixləri, qiymətləndirmə, mövzular, davamiyyət, tapşırıq və layihə qaydaları, ofis saatları, dərs cədvəli.
