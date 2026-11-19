@@ -41,7 +41,7 @@ cd kurs-komekcisi
 pip install -r requirements.txt
 ```
 
-API açarını `.streamlit/secrets.toml` faylına yazın (bu fayl Git-ə əlavə olunmamalıdır):
+API açarını `.streamlit/secrets.toml` faylına yazın 
 
 ```toml
 ANTHROPIC_API_KEY = "sk-ant-..."
@@ -66,7 +66,7 @@ streamlit run app.py
 ├── app.py                  # agent, alətlər, interfeys
 ├── requirements.txt
 ├── .streamlit/
-│   └── config.toml         # tünd tema
+│   └── config.toml         
 └── README.md
 ```
 
